@@ -6,7 +6,7 @@ def separate():
     drink_separate = 'X'
 
     while drink_separate != 'Y' or drink_separate != 'N' or drink_separate != 'y' or drink_separate != 'n':
-        drink_separate = input("Drink bill separate? (Y/N) ")
+        drink_separate = input("\nDrink bill separate? (Y/N) ")
 
         if drink_separate == 'Y' or drink_separate == 'y':
             meal_amount = float(input("Meal: "))

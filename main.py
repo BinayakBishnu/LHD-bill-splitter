@@ -9,13 +9,13 @@ print(amount_tuple)
 gross_amount = sum(list(amount_tuple))
 print(gross_amount)
 
-number_of_people = int(input('Number of people: '))
+number_of_people = int(input('\nNumber of people: '))
 
 people_list = {'meal': [], 'drinks': []}
 meal_divided_list = {}
 drinks_divided_list = {}
 
-print("Who all are there? ")
+print("\nWho all are there? ")
 stop = number_of_people
 
 while stop > 0:
@@ -24,14 +24,14 @@ while stop > 0:
 
     people_list['meal'].append(name)
 
-print('Dividing meal amount')
+print('\nDividing meal amount')
 if people_list['meal'] != []:
     meal_divided_list = divide_amount.divide(
         amount_tuple[0], people_list['meal'])
 
 
 if amount_tuple[1] != 0:
-    print("Who all had drinks? ")
+    print("\nWho all had drinks? ")
     stop = 'random'
     print("Type x to stop")
     while stop != 'x':
@@ -41,7 +41,7 @@ if amount_tuple[1] != 0:
             break
         people_list['drinks'].append(name)
 
-    print('Dividing drinks amount')
+    print('\nDividing drinks amount')
     if people_list['drinks'] != []:
         drinks_divided_list = divide_amount.divide(
             amount_tuple[0], people_list['drinks'])
@@ -90,4 +90,12 @@ print(all_totals)
 
 with open('bills.txt', 'a') as f:
     f.write(all_totals)
-    f.write("\n\n")
+    f.write("\n")
+
+    f.write(str(amount_tuple[0]))
+    f.write(" ")
+    f.write(str(amount_tuple[1]))
+    f.write("\n")
+
+    f.write(str(gross_amount))
+    f.write("\n")
